@@ -2246,7 +2246,7 @@ button {
 /* ── LEFT: Visual pane ── */
 .demo-visual {
   position: relative;
-  width: 38%;
+  width: 45%;
   flex-shrink: 0;
   background: var(--dark);
   overflow: hidden;
