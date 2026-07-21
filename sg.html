@@ -1488,9 +1488,385 @@
 <!-- ============================================================
      BOOKING MODAL — PASTE YOUR FULL MODAL HTML BLOCK HERE
      Copy the entire <div class="demo-overlay" id="demo-overlay"...>
-     through the closing </div><!-- /demo-overlay --> from index.html.
+     through the closing </div> /demo-overlay from index.html.
      sg.js already has the complete 3-step modal JS wired in.
      ============================================================ -->
+<!-- ============================================================
+     BOOK A DEMO MODAL — 3-STEP LEAD FUNNEL
+     Steps: 1 = Lead Capture · 2 = Calendar Scheduler · 3 = Confirmation
+     ============================================================ -->
+     <div class="demo-overlay" id="demo-overlay" role="dialog" aria-modal="true" aria-labelledby="demo-title" aria-hidden="true">
+      <div class="demo-modal" id="demo-modal">
+    
+        <!-- ══════════════════════════════════════════════════════
+             LEFT VISUAL PANE — 38% width, hidden on mobile
+             Hidden on Step 3 (confirmation is full-width centered)
+             ══════════════════════════════════════════════════════ -->
+        <div class="demo-visual" id="demo-visual-pane" aria-hidden="true">
+          <!-- PLACEHOLDER: Replace inner div with a real <video> tag for a
+               slow-motion luxury estate loop. Suggested shot: golden-hour
+               drone reveal of a glass hillside mansion.
+               <video autoplay muted loop playsinline class="demo-bg-video">
+                 <source src="videos/luxury-architecture-loop.mp4" type="video/mp4">
+               </video> -->
+          <div class="demo-visual-overlay"></div>
+          <div class="demo-visual-content">
+    
+            <!-- Logo mark — always visible in visual pane -->
+            <div class="demo-visual-logo">
+              <span class="logo-n">N</span><span class="logo-three">3</span><span class="logo-x">X</span>
+              <span class="logo-realty">Realty</span>
+            </div>
+    
+            <!-- Step progress indicator inside visual pane -->
+            <div class="demo-step-pills" aria-hidden="true">
+              <div class="step-pill step-pill-active" data-for-step="1">
+                <span class="pill-num">1</span>
+                <span class="pill-label">Details</span>
+              </div>
+              <div class="step-pill-connector"></div>
+              <div class="step-pill" data-for-step="2">
+                <span class="pill-num">2</span>
+                <span class="pill-label">Schedule</span>
+              </div>
+              <div class="step-pill-connector"></div>
+              <div class="step-pill" data-for-step="3">
+                <span class="pill-num">3</span>
+                <span class="pill-label">Confirmed</span>
+              </div>
+            </div>
+    
+            <!-- Testimonial quote -->
+            <blockquote class="demo-visual-quote">
+              "Our GCI grew 340% in the first year. The platform just works."
+            </blockquote>
+            <div class="demo-visual-attr">
+              <!-- PLACEHOLDER: Replace gradient div with agent headshot <img> -->
+              <div class="demo-visual-avatar">JD</div>
+              <div>
+                <div class="demo-visual-name">Jordan Davis</div>
+                <div class="demo-visual-role">Top 1% · Beverly Hills, CA</div>
+              </div>
+            </div>
+    
+            <!-- Stats row -->
+            <div class="demo-visual-stats">
+              <div class="demo-vstat">
+                <span class="demo-vstat-num">3k+</span>
+                <span class="demo-vstat-label">Agents</span>
+              </div>
+              <div class="demo-vstat">
+                <span class="demo-vstat-num">$1B</span>
+                <span class="demo-vstat-label">Volume</span>
+              </div>
+              <div class="demo-vstat">
+                <span class="demo-vstat-num">6×</span>
+                <span class="demo-vstat-label">Growth</span>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+        <!-- /demo-visual -->
+    
+    
+        <!-- ══════════════════════════════════════════════════════
+             RIGHT CONTENT PANE — hosts all 3 steps
+             ══════════════════════════════════════════════════════ -->
+        <div class="demo-form-pane" id="demo-form-pane">
+    
+          <!-- Close button (always visible, resets to Step 1 on click) -->
+          <button class="demo-close" id="demo-close" aria-label="Close modal">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+    
+          <!-- ─── Step progress bar (mobile — shows inside form pane) ─── -->
+          <div class="demo-progress-bar" aria-hidden="true">
+            <div class="progress-track">
+              <div class="progress-fill" id="demo-progress-fill"></div>
+            </div>
+            <div class="progress-labels">
+              <span class="progress-label progress-label-active" data-step="1">Details</span>
+              <span class="progress-label" data-step="2">Schedule</span>
+              <span class="progress-label" data-step="3">Confirmed</span>
+            </div>
+          </div>
+    
+          <!-- ════════════════════════════════════════════════════
+               STEP 1 — Lead Capture Form
+               ════════════════════════════════════════════════════ -->
+          <div class="demo-step" id="modal-step-1" data-step="1">
+            <div class="demo-form-inner">
+    
+              <!-- Header -->
+              <div class="demo-form-header">
+                <p class="demo-eyebrow">Step 1 of 3 · Your Details</p>
+                <h2 class="demo-title" id="demo-title">Book a Demo</h2>
+                <p class="demo-subtitle">
+                  Speak with a platform specialist or call us at
+                  <a href="https://wa.me/14049811910" class="demo-phone-link">310-955-1077</a>
+                </p>
+              </div>
+    
+              <!-- Lead capture form -->
+              <form class="demo-form" id="demo-form" novalidate>
+    
+                <!-- Row: First + Last Name -->
+                <div class="demo-form-row">
+                  <div class="demo-field" id="field-first-name">
+                    <label class="demo-label" for="first-name">First Name <span class="req">*</span></label>
+                    <input class="demo-input" type="text" id="first-name" name="firstName"
+                      placeholder="Jordan" autocomplete="given-name" required />
+                    <span class="demo-error" id="err-first-name" role="alert"></span>
+                  </div>
+                  <div class="demo-field" id="field-last-name">
+                    <label class="demo-label" for="last-name">Last Name <span class="req">*</span></label>
+                    <input class="demo-input" type="text" id="last-name" name="lastName"
+                      placeholder="Davis" autocomplete="family-name" required />
+                    <span class="demo-error" id="err-last-name" role="alert"></span>
+                  </div>
+                </div>
+    
+                <!-- Email -->
+                <div class="demo-field" id="field-email">
+                  <label class="demo-label" for="email">Email <span class="req">*</span></label>
+                  <input class="demo-input" type="email" id="email" name="email"
+                    placeholder="jordan@yourbrand.com" autocomplete="email" required />
+                  <span class="demo-error" id="err-email" role="alert"></span>
+                </div>
+    
+                <!-- Phone -->
+                <div class="demo-field" id="field-phone">
+                  <label class="demo-label" for="phone">Phone Number <span class="req">*</span></label>
+                  <input class="demo-input" type="tel" id="phone" name="phone"
+                    placeholder="(310) 123-1234" autocomplete="tel" required />
+                  <span class="demo-error" id="err-phone" role="alert"></span>
+                </div>
+    
+                <!-- Dropdown: Agent type -->
+                <div class="demo-field" id="field-type">
+                  <label class="demo-label" for="agent-type">Are you an agent, team, or brokerage? <span class="req">*</span></label>
+                  <div class="demo-select-wrap">
+                    <select class="demo-input demo-select" id="agent-type" name="agentType" required>
+                      <option value="" disabled selected>Select your business type</option>
+                      <option value="solo-agent">Solo Agent</option>
+                      <option value="team">Real Estate Team</option>
+                      <option value="brokerage">Brokerage</option>
+                      <option value="enterprise">Enterprise / Franchise</option>
+                    </select>
+                    <span class="demo-select-arrow" aria-hidden="true">&#8964;</span>
+                  </div>
+                  <span class="demo-error" id="err-agent-type" role="alert"></span>
+                </div>
+    
+                <!-- Dropdown: Existing customer -->
+                <div class="demo-field" id="field-customer">
+                  <label class="demo-label" for="is-customer">Are you currently an N3X customer? <span class="req">*</span></label>
+                  <div class="demo-select-wrap">
+                    <select class="demo-input demo-select" id="is-customer" name="isCustomer" required>
+                      <option value="" disabled selected>Select an option</option>
+                      <option value="yes">Yes, I'm a current customer</option>
+                      <option value="no">No, I'm new to N3X</option>
+                      <option value="trial">I'm on a trial</option>
+                    </select>
+                    <span class="demo-select-arrow" aria-hidden="true">&#8964;</span>
+                  </div>
+                  <span class="demo-error" id="err-is-customer" role="alert"></span>
+                </div>
+    
+                <!-- Optional Website -->
+                <div class="demo-field" id="field-website">
+                  <label class="demo-label" for="website">Your current website
+                    <span class="demo-optional">(optional)</span>
+                  </label>
+                  <input class="demo-input" type="url" id="website" name="website"
+                    placeholder="https://yourwebsite.com" autocomplete="url" />
+                </div>
+    
+                <!-- Submit → advances to Step 2 -->
+                <button type="submit" class="demo-submit btn btn-primary btn-lg btn-full">
+                  NEXT: SELECT A TIME →
+                </button>
+    
+                <p class="demo-disclaimer">
+                  By submitting, you agree to our <a href="#">Terms of Service</a> and
+                  <a href="#">Privacy Policy</a>. We'll never share your information.
+                </p>
+    
+              </form>
+            </div>
+          </div>
+          <!-- /modal-step-1 -->
+    
+    
+          <!-- ════════════════════════════════════════════════════
+               STEP 2 — Calendar Scheduler
+               ════════════════════════════════════════════════════ -->
+          <div class="demo-step demo-step-hidden" id="modal-step-2" data-step="2">
+            <div class="demo-form-inner">
+    
+              <div class="demo-form-header">
+                <p class="demo-eyebrow">Step 2 of 3 · Pick a Time</p>
+                <h2 class="demo-title">Select Your<br>Preferred Slot</h2>
+                <p class="demo-subtitle">All sessions are 30 minutes via Zoom or phone. Times shown in your local timezone.</p>
+              </div>
+    
+              <!-- ── Calendar UI ── -->
+              <!-- <div class="cal-wrap"> -->
+              <div class="cal-wrap cal-wrap-embed">
+                <iframe
+                  src="https://calendly.com/firozfahim/15min?embed_type=inline&hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=1febb0"
+                  width="100%"
+                  height="460"
+                  frameborder="0"
+                  title="Schedule a demo">
+                </iframe>
+              </div>
+    
+                <!-- Month navigator -->
+                <div class="cal-header">
+                  <button class="cal-nav-btn" id="cal-prev-month" aria-label="Previous month">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <span class="cal-month-label" id="cal-month-label">June 2025</span>
+                  <button class="cal-nav-btn" id="cal-next-month" aria-label="Next month">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+    
+                <!-- Day-of-week header -->
+                <div class="cal-dow-row" aria-hidden="true">
+                  <span>Su</span><span>Mo</span><span>Tu</span>
+                  <span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+    
+                <!-- Date grid — injected by JS -->
+                <div class="cal-grid" id="cal-grid" role="grid" aria-label="Select a date"></div>
+    
+                <!-- Time slot picker — shown after a date is selected -->
+                <div class="cal-times-wrap" id="cal-times-wrap" aria-live="polite">
+                  <p class="cal-times-label" id="cal-times-label">Select a date to see available times</p>
+                  <div class="cal-times-grid" id="cal-times-grid"></div>
+                </div>
+    
+              </div>
+              <!-- /cal-wrap -->
+    
+              <!-- Back link -->
+              <button class="demo-back-link" id="step2-back">
+                ← Back to details
+              </button>
+    
+            </div>
+          </div>
+          <!-- /modal-step-2 -->
+    
+    
+          <!-- ════════════════════════════════════════════════════
+               STEP 3 — Booking Confirmation
+               ════════════════════════════════════════════════════ -->
+          <div class="demo-step demo-step-hidden" id="modal-step-3" data-step="3">
+            <div class="demo-confirm-inner">
+    
+              <!-- Rep avatar -->
+              <div class="confirm-avatar-wrap">
+                <!-- PLACEHOLDER: Replace with actual rep headshot <img> -->
+                <div class="confirm-avatar">AR</div>
+                <div class="confirm-avatar-ring"></div>
+              </div>
+    
+              <!-- Meeting with line -->
+              <p class="confirm-meeting-with">
+                <span class="confirm-sparkle">✨</span>
+                You are meeting with <strong id="confirm-rep-name">FaF</strong>
+              </p>
+    
+              <!-- Success banner -->
+              <div class="confirm-banner" role="status" aria-live="polite">
+                An email has been sent with the full booking details!&nbsp; 🎉
+              </div>
+    
+              <!-- Action buttons -->
+              <div class="confirm-actions">
+                <button class="confirm-btn confirm-btn-outline" id="confirm-acknowledge">
+                  Thanks, I see it
+                </button>
+                <button class="confirm-btn confirm-btn-outline" id="confirm-add-cal">
+                  <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <rect x="1" y="3" width="16" height="13" rx="2" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M1 7h16M6 1v4M12 1v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                  Add to Calendar
+                </button>
+              </div>
+    
+              <!-- Meeting details card -->
+              <div class="confirm-details-card">
+    
+                <div class="confirm-detail-row">
+                  <!-- Clock icon -->
+                  <svg class="confirm-detail-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M10 6v4.5l3 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <div class="confirm-detail-body">
+                    <span class="confirm-detail-label">Time</span>
+                    <span class="confirm-detail-value" id="confirm-datetime">—</span>
+                    <a href="#" class="confirm-reschedule" id="confirm-reschedule">Reschedule</a>
+                  </div>
+                </div>
+    
+                <div class="confirm-detail-row">
+                  <!-- Guests icon -->
+                  <svg class="confirm-detail-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="8" cy="7" r="3" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M2 17c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                    <circle cx="15" cy="6" r="2" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M18 16c0-2.21-1.343-4-3-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                  <div class="confirm-detail-body">
+                    <span class="confirm-detail-label">Guests</span>
+                    <span class="confirm-detail-value" id="confirm-guests">—</span>
+                  </div>
+                </div>
+    
+                <div class="confirm-detail-row">
+                  <!-- Details / file icon -->
+                  <svg class="confirm-detail-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="3" y="2" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M7 7h6M7 10h6M7 13h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                  <div class="confirm-detail-body">
+                    <span class="confirm-detail-label">Booking Details</span>
+                    <span class="confirm-detail-value">30-minute N3X Platform Demo · Zoom / Phone</span>
+                  </div>
+                </div>
+    
+              </div>
+              <!-- /confirm-details-card -->
+    
+              <!-- Done button — closes modal -->
+              <button class="btn btn-primary confirm-done-btn" id="confirm-done">
+                Done
+              </button>
+    
+            </div>
+          </div>
+          <!-- /modal-step-3 -->
+    
+        </div>
+        <!-- /demo-form-pane -->
+    
+      </div>
+      <!-- /demo-modal -->
+    </div>
+    <!-- /demo-overlay -->
 
 
 <!-- Floating buttons -->
