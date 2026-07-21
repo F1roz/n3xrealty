@@ -1908,7 +1908,7 @@ button {
   line-height: 1.4;
 }
 
-.footer-links a:hover { color: var(--cream); }
+.footer-links a:hover { color: var(--teal); }
 
 /* Footer Bottom */
 .footer-bottom {
