@@ -640,7 +640,7 @@
      Markup is built here so every page shares one copy.
      ------------------------------------------------------------------------ */
   const DEMO = {
-    calendly: 'https://calendly.com/firozfahim/15min',
+    calendly: 'https://calendar.app.google/GkKuokrXA2DLxS4R6',
     phoneDisplay: '404-981-1910',
     phoneHref: 'https://wa.me/14049811910',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=75',
