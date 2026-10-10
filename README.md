@@ -27,7 +27,8 @@ n3x-realty/
     │   ├── main.css              Shared: colours, type, buttons, header, footer, modal
     │   └── pages/<page>.css      One stylesheet per page (home.css, ai-crm.css, …)
     ├── js/
-    │   └── main.js               The only script. Every page loads it.
+    │   ├── main.js               Site behaviour: menus, tabs, FAQs, counters, carousel…
+    │   └── book-demo.js          The "Book a demo" form (shared by every page)
     └── images/brand/             Logo, favicons, social share image
 ```
 
@@ -36,20 +37,22 @@ File names match the live URLs (`/ai-crm`, `/seo-geo`, …). Old addresses such 
 
 ## JavaScript
 
-The eight page scripts and the inline script on the home page were merged into
-`assets/js/main.js`. Each feature checks whether its markup exists before running,
-so the same file works on every page. Sections are numbered at the top of the file.
+The eight page scripts and the inline script on the home page were merged into two
+files. `assets/js/main.js` runs everything except the booking form; each feature checks
+whether its markup exists before running, so the same file works on every page.
 
-The **Book a demo** popup is built by `main.js`, so it no longer has to be pasted into
-every page. Anything with `href="#book-demo"` (or the `data-open-demo` attribute)
+The **Book a demo** form lives in `assets/js/book-demo.js`. It builds the popup itself,
+so the form no longer has to be pasted into every page. Every page loads it right after
+`main.js`. Anything with `href="#book-demo"` (or the `data-open-demo` attribute)
 opens it, and a link to `any-page#book-demo` opens it on arrival.
-Step 2 embeds your Calendly page, pre-filled with the visitor's name, email and phone.
+Step 2 opens your Google Calendar booking page (or shows it inside the popup if you add the embed link).
 
-Settings at the top of the modal section in `main.js`:
+Settings near the top of `book-demo.js`:
 
 ```js
 const DEMO = {
-  calendly: 'https://calendly.com/firozfahim/15min',
+  booking: 'https://calendar.app.google/GkKuokrXA2DLxS4R6',
+  bookingEmbed: '',   // optional Google "Website embed" link
   phoneDisplay: '404-981-1910',
   phoneHref: 'https://wa.me/14049811910',
   ...

@@ -1095,3 +1095,19 @@ h1 em, h2 em {
 /* Text wordmarks for the N3X sister companies (About page) */
 .logo-n, .logo-x { color: var(--cream); }
 .logo-three { background: var(--brand-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--aqua); }
+
+/* Book-a-demo step 2: Google Calendar booking */
+.demo-booking-card {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--cream);
+  border: 1px solid var(--cream-dark);
+}
+.demo-booking-card svg { width: 32px; height: 32px; color: var(--teal-ink); }
+.demo-booking-card p { font-size: var(--text-secondary); color: var(--text-muted-d); max-width: 40ch; }
+.btn-ghost-dark { color: var(--text-dark); border: 1.5px solid #c9d3da; background: transparent; }
+.btn-ghost-dark:hover { border-color: var(--text-dark); }
