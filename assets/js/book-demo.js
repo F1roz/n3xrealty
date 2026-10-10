@@ -63,7 +63,7 @@
         </ol>
         <p class="demo-visual-note">A short call with a platform specialist. We look at your market, your current site and your lead flow, then show you exactly what we'd change.</p>
         <dl class="demo-visual-stats">
-          <div><dt>3,000+</dt><dd>Professionals served</dd></div>
+          <div><dt>327+</dt><dd>Professionals served</dd></div>
           <div><dt>$200M</dt><dd>Volume closed</dd></div>
           <div><dt>43 sec</dt><dd>Avg. lead response</dd></div>
         </dl>
