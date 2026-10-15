@@ -18,6 +18,12 @@
 (function () {
   'use strict';
 
+  // Site root, worked out from this script's own URL (assets/js/book-demo.js),
+  // so links and images also work on pages inside sub-folders such as /blog/.
+  const ROOT = (() => {
+    try { return new URL('../../', document.currentScript.src).href; } catch (e) { return ''; }
+  })();
+
   const $  = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
@@ -55,7 +61,7 @@
     <aside class="demo-visual" aria-hidden="true">
       <img class="demo-visual-img" src="${DEMO.image}" alt="" loading="lazy" decoding="async">
       <div class="demo-visual-content">
-        <img class="demo-visual-logo" src="assets/images/brand/n3x-realty-logo.png" alt="" width="178" height="46">
+        <img class="demo-visual-logo" src="${ROOT}assets/images/brand/n3x-realty-logo.png" alt="" width="178" height="46">
         <ol class="demo-steps">
           <li class="demo-step-pill is-active" data-for-step="1"><span>1</span>Your details</li>
           <li class="demo-step-pill" data-for-step="2"><span>2</span>Pick a time</li>
@@ -63,9 +69,9 @@
         </ol>
         <p class="demo-visual-note">A short call with a platform specialist. We look at your market, your current site and your lead flow, then show you exactly what we'd change.</p>
         <dl class="demo-visual-stats">
-          <div><dt>327+</dt><dd>Professionals served</dd></div>
-          <div><dt>$200M</dt><dd>Volume closed</dd></div>
-          <div><dt>43 sec</dt><dd>Avg. lead response</dd></div>
+          <div><dt>$149</dt><dd>3-page starter website</dd></div>
+          <div><dt>24/7</dt><dd>AI lead follow-up</dd></div>
+          <div><dt>0</dt><dd>Long-term contracts</dd></div>
         </dl>
       </div>
     </aside>
@@ -102,7 +108,7 @@
           </div>
           <div class="demo-field"><label for="demo-site">Current website <span class="demo-optional">(optional)</span></label><input id="demo-site" type="url" name="website" inputmode="url" placeholder="https://" autocomplete="url"><p class="demo-error" aria-live="polite"></p></div>
           <button type="submit" class="btn btn-primary btn-full">Continue to scheduling</button>
-          <p class="demo-legal">By continuing you agree to our <a href="terms-of-service.html">Terms</a> and <a href="privacy-policy.html">Privacy Policy</a>. We never sell your information.</p>
+          <p class="demo-legal">By continuing you agree to our <a href="${ROOT}terms-of-service.html">Terms</a> and <a href="${ROOT}privacy-policy.html">Privacy Policy</a>. We never sell your information.</p>
         </form>
       </section>
 

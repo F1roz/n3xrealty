@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>N3X Realty blog</title>
+    <link>https://www.n3xrealty.com/blog</link>
+    <description>Guides for real estate agents on websites, lead follow-up, local SEO and AI search.</description>
+    <language>en-us</language>
+    <item>
+      <title>What every real estate agent website needs: a 3-page checklist</title>
+      <link>https://www.n3xrealty.com/blog/real-estate-agent-website-checklist</link>
+      <guid>https://www.n3xrealty.com/blog/real-estate-agent-website-checklist</guid>
+      <pubDate>Thu, 15 Oct 2026 09:00:00 +0000</pubDate>
+      <description>You don&#x27;t need a 40-page site to look professional and win leads. Here is exactly what to put on three pages, and the basics most agent sites forget.</description>
+    </item>
+    <item>
+      <title>How fast should you respond to a new real estate lead?</title>
+      <link>https://www.n3xrealty.com/blog/how-fast-to-respond-to-real-estate-leads</link>
+      <guid>https://www.n3xrealty.com/blog/how-fast-to-respond-to-real-estate-leads</guid>
+      <pubDate>Thu, 15 Oct 2026 09:00:00 +0000</pubDate>
+      <description>The short answer is: as fast as you possibly can, in a way that sounds like you. Here is a first-message script and a 30-day follow-up plan.</description>
+    </item>
+    <item>
+      <title>Google Business Profile for real estate agents: a step-by-step guide</title>
+      <link>https://www.n3xrealty.com/blog/google-business-profile-for-real-estate-agents</link>
+      <guid>https://www.n3xrealty.com/blog/google-business-profile-for-real-estate-agents</guid>
+      <pubDate>Thu, 15 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Your Google Business Profile is often the first thing people see when they search for an agent near them. Here is how to set it up properly.</description>
+    </item>
+    <item>
+      <title>How real estate agents can get recommended by ChatGPT and AI search</title>
+      <link>https://www.n3xrealty.com/blog/how-to-get-recommended-by-ai-search-real-estate</link>
+      <guid>https://www.n3xrealty.com/blog/how-to-get-recommended-by-ai-search-real-estate</guid>
+      <pubDate>Thu, 15 Oct 2026 09:00:00 +0000</pubDate>
+      <description>More buyers and sellers now ask AI assistants who to work with. Here is what influences those answers and what you can do about it.</description>
+    </item>
+  </channel>
+</rss>

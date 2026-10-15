@@ -15,6 +15,8 @@ n3x-realty/
 ├── seo-geo.html                  SEO & GEO                  (was sg.html)
 ├── social-media-marketing.html   Marketing & Branding       (was smm.html)
 ├── real-estate-websites.html     Real Estate Websites
+├── blog.html                     Blog listing (/blog)
+├── blog/<slug>.html              One page per article (/blog/<slug>), plus blog/rss.xml
 ├── privacy-policy.html           Privacy Policy             (new)
 ├── terms-of-service.html         Terms of Service           (new)
 ├── 404.html                      Not-found page             (new)
@@ -25,7 +27,7 @@ n3x-realty/
 └── assets/
     ├── css/
     │   ├── main.css              Shared: colours, type, buttons, header, footer, modal
-    │   └── pages/<page>.css      One stylesheet per page (home.css, ai-crm.css, …)
+    │   └── pages/<page>.css      One stylesheet per page (home.css, blog.css, ai-crm.css, …)
     ├── js/
     │   ├── main.js               Site behaviour: menus, tabs, FAQs, counters, carousel…
     │   └── book-demo.js          The "Book a demo" form (shared by every page)
@@ -78,3 +80,26 @@ button appears automatically once a video file is present.
   ask their device for reduced motion.
 
 See `.ux-profile.md` for the full UI guidelines.
+
+## Blog
+
+- `blog.html` lists every article. `blog/<slug>.html` is one article, on an off-white
+  reading background (`assets/css/pages/blog.css`).
+- To add an article: copy any file in `blog/`, rename it to the new slug (lowercase,
+  words joined by hyphens), then change the `<title>`, meta description, canonical URL,
+  the JSON-LD block, the header text and the article body. Add a card for it near the
+  top of the list in `blog.html`, a `<url>` line in `sitemap.xml` and an `<item>` in
+  `blog/rss.xml`.
+- Pages inside `blog/` link to the rest of the site with `../` (for example
+  `../assets/css/main.css`).
+
+## Analytics
+
+Every page has the Google tag (`G-RS92PF2SN4`) directly after `<head>`. Add the same
+snippet to any new page, once.
+
+## Claims and content
+
+Only publish numbers, client names, logos and reviews you can prove. Testimonials need the
+client's permission, and US law (the FTC rule on fake reviews and testimonials) applies
+to businesses marketing to US consumers wherever they are based.
